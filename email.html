@@ -42,7 +42,23 @@ function showDiv() {
     <h2 class="email-title">Here is the email address you were looking for</h2><br>
     <a id="email-content" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</a>&nbsp;<img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
   </div>
-  <script src="scripts/copy-email.js"></script>
+  <script>
+    function showDiv() {
+    document.querySelector(".captcha-box").style.display = "block";
+    document.querySelector("#turnstile-widget").style.display = "none";
+  }
+
+  window.onloadTurnstileCallback = function() {
+    turnstile.render('#turnstile-widget', {
+      sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
+      theme: 'dark',
+      callback: function(token) {
+        console.log(`Challenge Success ${token}`);
+        showDiv();
+      },
+    });
+  };
+  </script>
     <br><br><br>
 <footer>
   <a href="pgp_keys.asc" download title="Everyone should have one of these">
