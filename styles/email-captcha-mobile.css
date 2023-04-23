@@ -1,4 +1,3 @@
-@viewport {    width: device-width ;    zoom: 1.0 ;} 
 @font-face {    font-family: 'name';    src: url('../resources/name.ttf') format('opentype');  }
 @font-face {    font-family: 'spoiler';    src: url('../resources/spoiler.ttf') format('truetype');  }
 @font-face {    font-family: 'mail';        src: url('../resources/mail.otf') format('opentype');     }
@@ -15,27 +14,21 @@
     margin-right: 10%;
     padding: 2em;
     text-align: center;
-    -webkit-text-align: center;
-    -moz-text-align: center;
-    
-    }
+}
     
 .turnstile-widget{
-      text-align: center;
-      -webkit-text-align: center;
-      -moz-text-align: center;
-      margin: auto;
-    }
-    
-    .email-title{
-      font-family: name, sans-serif;
-    }
-    
-    #email-copy {
-        cursor: pointer;
-        transition: transform 0.2s ease-in-out;
-    }
-      
-    #email-copy:active {
-        transform: translateY(4px);
-    }
+  margin: auto;
+}
+
+.email-title{
+  font-family: name, sans-serif;
+}
+
+#email-copy {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+  
+#email-copy:active {
+    transform: translateY(4px);
+}
