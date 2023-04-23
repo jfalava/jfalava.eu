@@ -17,19 +17,6 @@ padding: 2em;
 text-align: center;
 }
 
-.back-to-index{
-    text-decoration: none;
-    
-}
-
-.back-to-index:visited {
-  color: white;
-}
-
-.back-to-index:hover {
-  color: rgb(62, 135, 83);
-}
-
 .turnstile-widget{
     margin:auto;
   }
