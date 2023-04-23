@@ -16,11 +16,13 @@ margin-right: 30%;
 padding: 2em;
 text-align: center;
 }
+
+.turnstile-widget{
+  margin:auto;
+}
+
 .email-title{
   font-family: name, sans-serif;
-}
-.turnstile-widget{
-  text-align: center;
 }
 
 #email-copy {
