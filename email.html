@@ -14,22 +14,19 @@
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
   <style>.captcha-box { display: none;  }</style>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const copyLink = document.getElementById('email-copy');
-    const link = document.getElementById('email-content');
+function showDiv() {
+      document.querySelector(".captcha-box").style.display = "block";
+    }
 
-    copyLink.addEventListener('click', () => {
-      const linkText = link.textContent;
-
-      navigator.clipboard.writeText(linkText)
-        .then(() => {
-          console.log('Link copied to clipboard');
-        })
-        .catch((err) => {
-          console.error('Failed to copy link: ', err);
-        });
-    });
-  });
+    window.onloadTurnstileCallback = function() {
+      turnstile.render('#turnstile-widget', {
+        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
+        callback: function(token) {
+          console.log(`Challenge Success ${token}`);
+          showDiv();
+        },
+      });
+    };
   </script>
 </head>
   <title>Jorge Fernando Álava</title>
