@@ -34,14 +34,12 @@
   const emailSpan = document.querySelector("#email");
 
   emailCopyBtn.addEventListener("click", function() {
-    const emailText = emailSpan.innerText; // Retrieve the text content of the email span
-    const tempTextArea = document.createElement("textarea"); // Create a temporary textarea element
-    tempTextArea.value = emailText; // Set the value of the temporary textarea to the email text
-    document.body.appendChild(tempTextArea); // Add the temporary textarea to the document body
-    tempTextArea.select(); // Select the text in the temporary textarea
-    document.execCommand("copy"); // Copy the selected text to the clipboard
-    document.body.removeChild(tempTextArea); // Remove the temporary textarea from the document body
-    console.log("Copied email: " + emailText); // Log a message to the console
+    const emailText = emailSpan.textContent;
+    navigator.clipboard.writeText(emailText).then(function() {
+      console.log("Copied email: " + emailText);
+    }, function() {
+      console.error("Failed to copy email");
+    });
   });
   </script>
 </head>
@@ -55,7 +53,7 @@
   <div id="turnstile-widget"></div>
   <div class="captcha-box">
     <h2 class="email-title">Here is the email address you were looking for</h2><br>
-    <a id="email" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</a> <img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
+    <span id="email" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</span>&nbsp;<img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
   </div>    
     <br><br><br>
 <footer>
