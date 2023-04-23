@@ -17,6 +17,10 @@ padding: 2em;
 text-align: center;
 }
 
+.email-title{
+    font-family: name, sans-serif;
+  }
+
 .turnstile-widget{
     text-align: center;
 }

@@ -32,24 +32,22 @@
     };
   </script>
   <script>
-// Get the image and link elements
-const emailCopy = document.getElementById('email-copy');
-const linkElement = document.querySelector('a');
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyLink = document.getElementById('email-copy');
+    const link = document.getElementById('email-content');
 
-// Add a click event listener to the image
-emailCopy.addEventListener('click', () => {
-  // Get the text content of the link element
-  const linkText = linkElement.textContent;
+    copyLink.addEventListener('click', () => {
+      const linkText = link.textContent;
 
-  // Copy the link text to the clipboard
-  navigator.clipboard.writeText(linkText)
-    .then(() => {
-      console.log('Link copied to clipboard');
-    })
-    .catch((err) => {
-      console.error('Failed to copy link: ', err);
+      navigator.clipboard.writeText(linkText)
+        .then(() => {
+          console.log('Link copied to clipboard');
+        })
+        .catch((err) => {
+          console.error('Failed to copy link: ', err);
+        });
     });
-});
+  });
 </script>
 </head>
   <title>Jorge Fernando Álava</title>
