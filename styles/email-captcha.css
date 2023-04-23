@@ -14,12 +14,11 @@
   margin-right: 30%;
   padding: 2em;
   text-align: center;
-  -webkit-text-align: center;
-  -moz-text-align: center;
 }
 
 .turnstile-widget{
-  margin: auto;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .email-title{
