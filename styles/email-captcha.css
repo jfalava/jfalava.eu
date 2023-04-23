@@ -1,0 +1,26 @@
+@viewport {    width: device-width ;    zoom: 1.0 ;} 
+@font-face {    font-family: 'name';    src: url('../resources/name.ttf') format('opentype');  }
+@font-face {    font-family: 'spoiler';    src: url('../resources/spoiler.ttf') format('truetype');  }
+@font-face {    font-family: 'mail';        src: url('../resources/mail.otf') format('opentype');     }
+
+.captcha-box{
+font-family: spoiler,sans-serif;
+background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.6px);
+-webkit-backdrop-filter: blur(6.6px);
+border: 1px solid rgba(255, 255, 255, 0.19);
+margin-left: 40%;
+margin-right: 40%;
+padding: 2em;
+}
+
+#email-copy {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  #email-copy:active {
+    transform: translateY(2px);
+  }
