@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                        hi
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -16,21 +13,6 @@
   <link rel="stylesheet" media="(max-width: 832px)" href="styles/linktree-mobile.css"/>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
   <style>.captcha-box { display: none;  }</style>
-  <script>
-    function showDiv() {
-      document.querySelector(".captcha-box").style.display = "block";
-    }
-
-    window.onloadTurnstileCallback = function() {
-      turnstile.render('#turnstile-widget', {
-        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
-        callback: function(token) {
-          console.log(`Challenge Success ${token}`);
-          showDiv();
-        },
-      });
-    };
-  </script>
 </head>
   <title>Jorge Fernando Álava</title>
 
@@ -63,6 +45,23 @@
       });
     });
   </script>
+    <script>
+    function showDiv() {
+      document.querySelector(".captcha-box").style.display = "block";
+      document.querySelector("#turnstile-widget").style.display = "none";
+    }
+
+    window.onloadTurnstileCallback = function() {
+      turnstile.render('#turnstile-widget', {
+        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
+        theme: 'dark',
+        callback: function(token) {
+          console.log(`Challenge Success ${token}`);
+          showDiv();
+        },
+      });
+    };
+    </script>
     <br><br><br>
 <footer>
   <a href="pgp_keys.asc" download title="Everyone should have one of these">
