@@ -14,24 +14,18 @@
   <link rel="stylesheet" media="(max-width: 832px)" href="styles/header-mobile.css"/>
   <link rel="stylesheet" media="(max-width: 832px)" href="styles/email-captcha-mobile.css"/>
   <link rel="stylesheet" media="(max-width: 832px)" href="styles/linktree-mobile.css"/>
-  <title>Jorge Fernando Álava</title>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+  <style>.captcha-box { display: none;  }</style>
+  <script src="scripts/hide-email.js"></script>
+  <script src="scripts/email-copy.js"></script>
 </head>
+  <title>Jorge Fernando Álava</title>
+
 <body><br>
   <div class="name-wrapper">
     <div class="name nameone"><span>Jorge</span></div><div class="name surname"><span>Álava</span></div><span><img src="resources/pfp.jpg" width="175" height="175" class="pfp"></span><br>
     <div class="name nametwo"><span>Fernando</span></div><div class="name surnametwo"><span>Vélez</span></div>
   </div><br>
-
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
-  <style>
-    .captcha-box {
-      display: none;
-    }
-  </style>
-  <script src="scripts/hide-email.js"></script>
-  <script src="scripts/email-copy.js"></script>
-</head>
-<body>
   <div id="turnstile-widget"></div>
   <div class="captcha-box">
     <h2 class="email-title">Here is the email address you were looking for</h2><br>
