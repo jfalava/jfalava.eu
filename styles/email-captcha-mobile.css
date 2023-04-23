@@ -11,16 +11,16 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(6.6px);
 -webkit-backdrop-filter: blur(6.6px);
 border: 1px solid rgba(255, 255, 255, 0.19);
-margin-left: 40%;
-margin-right: 40%;
+margin-left: 10%;
+margin-right: 10%;
 padding: 2em;
 }
 
 .turnstile-widget{
-  text-align: center;
+    text-align: center;
 }
 
-#email-copy {
+ #email-copy {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
