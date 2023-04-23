@@ -27,7 +27,24 @@
     <h2 class="email-title">Here is the email address you were looking for</h2><br>
     <a id="email-content" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</a>&nbsp;<img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
   </div>
-  <script src="scripts/turnstile-widget.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const copyLink = document.getElementById('email-copy');
+    const link = document.getElementById('email-content');
+
+    copyLink.addEventListener('click', () => {
+      const linkText = link.textContent;
+
+      navigator.clipboard.writeText(linkText)
+        .then(() => {
+          console.log('Link copied to clipboard');
+        })
+        .catch((err) => {
+          console.error('Failed to copy link: ', err);
+        });
+    });
+  });
+  </script>
   <script src="scripts/copy-email.js"></script>
     <br><br><br>
 <footer>
