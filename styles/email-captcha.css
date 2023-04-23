@@ -14,8 +14,11 @@ border: 1px solid rgba(255, 255, 255, 0.19);
 margin-left: 40%;
 margin-right: 40%;
 padding: 2em;
+text-align: center;
 }
-
+.email-title{
+  font-family: name, sans-serif;
+}
 .turnstile-widget{
   text-align: center;
 }

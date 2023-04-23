@@ -28,26 +28,13 @@
       display: none;
     }
   </style>
-  <script>
-    function showDiv() {
-      document.querySelector(".captcha-box").style.display = "block";
-    }
-
-    window.onloadTurnstileCallback = function() {
-      turnstile.render('#turnstile-widget', {
-        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
-        callback: function(token) {
-          console.log(`Challenge Success ${token}`);
-          showDiv();
-        },
-      });
-    };
-  </script>
+  <script src="scripts/hide-email.js"></script>
+  <script src="scripts/email-copy.js"></script>
 </head>
 <body>
   <div id="turnstile-widget"></div>
   <div class="captcha-box">
-    <h2>Here is the email address you were looking for</h2><br>
+    <h2 class="email-title">Here is the email address you were looking for</h2><br>
     <a id="email" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</a> <img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
   </div>    
     <br><br><br>
