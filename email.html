@@ -16,8 +16,31 @@
   <link rel="stylesheet" media="(max-width: 832px)" href="styles/linktree-mobile.css"/>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
   <style>.captcha-box { display: none;  }</style>
-  <script src="scripts/hide-email.js"></script>
-  <script src="scripts/email-copy.js"></script>
+  <script>function showDiv() {
+    document.querySelector(".captcha-box").style.display = "block";
+  }
+
+  window.onloadTurnstileCallback = function() {
+    turnstile.render('#turnstile-widget', {
+      sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
+      callback: function(token) {
+        console.log(`Challenge Success ${token}`);
+        showDiv();
+      },
+    });
+  };</script>
+  <script>
+    const emailCopyBtn = document.querySelector("#email-copy");
+    const emailSpan = document.querySelector("#email");
+    
+    emailCopyBtn.addEventListener("click", function() {
+      const emailText = emailSpan.textContent;
+      navigator.clipboard.writeText(emailText).then(function() {
+        console.log("Copied email: " + emailText);
+      }, function() {
+        console.error("Failed to copy email");
+      });
+    });</script>
 </head>
   <title>Jorge Fernando Álava</title>
 
