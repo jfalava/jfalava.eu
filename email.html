@@ -13,21 +13,6 @@
   <link rel="stylesheet" media="(max-width: 832px)" href="styles/linktree-mobile.css"/>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
   <style>.captcha-box { display: none;  }</style>
-  <script>
-function showDiv() {
-      document.querySelector(".captcha-box").style.display = "block";
-    }
-
-    window.onloadTurnstileCallback = function() {
-      turnstile.render('#turnstile-widget', {
-        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
-        callback: function(token) {
-          console.log(`Challenge Success ${token}`);
-          showDiv();
-        },
-      });
-    };
-  </script>
 </head>
   <title>Jorge Fernando Álava</title>
 
@@ -43,21 +28,40 @@ function showDiv() {
     <a id="email-content" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</a>&nbsp;<img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
   </div>
   <script>
-    function showDiv() {
-    document.querySelector(".captcha-box").style.display = "block";
-    document.querySelector("#turnstile-widget").style.display = "none";
-  }
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyLink = document.getElementById('email-copy');
+      const link = document.getElementById('email-content');
 
-  window.onloadTurnstileCallback = function() {
-    turnstile.render('#turnstile-widget', {
-      sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
-      theme: 'dark',
-      callback: function(token) {
-        console.log(`Challenge Success ${token}`);
-        showDiv();
-      },
+      copyLink.addEventListener('click', () => {
+        const linkText = link.textContent;
+
+        navigator.clipboard.writeText(linkText)
+          .then(() => {
+            console.log('Link copied to clipboard');
+          })
+          .catch((err) => {
+            console.error('Failed to copy link: ', err);
+          });
+      });
     });
-  };
+  </script>
+    <script>
+    function showDiv() {
+      document.querySelector(".captcha-box").style.display = "block";
+      document.querySelector("#turnstile-widget").style.display = "none";
+    }
+
+    window.onloadTurnstileCallback = function() {
+      turnstile.render('#turnstile-widget', {
+        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
+        theme: 'dark',
+        callback: function(token) {
+          console.log(`Challenge Success ${token}`);
+          showDiv();
+        },
+      });
+    };
+    </script>
   </script>
     <br><br><br>
 <footer>
