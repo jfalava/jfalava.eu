@@ -21,31 +21,39 @@
     <div class="name nametwo"><span>Fernando</span></div><div class="name surnametwo"><span>Vélez</span></div>
   </div><br>
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
-    <script>
-      window.onloadTurnstileCallback = function () {
-        turnstile.render('#captcha-container', {
-          sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
-          callback: function(token) {
-            document.getElementById("captcha-status").innerHTML = "Captcha Resolved!";
-            document.getElementById("email-container").innerHTML = "example@example.com";
-            document.getElementById("email-container").style.display = "block";
-            document.getElementById("captcha-container").style.display = "none";
-          },
-        });
-      };
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+  <style>
+    .captcha-box {
+      display: none;
+    }
+  </style>
+  <script>
+    function showDiv() {
+      document.querySelector(".captcha-box").style.display = "block";
+    }
 
-      turnstile.ready(onloadTurnstileCallback);
-    </script>
+    window.onloadTurnstileCallback = function() {
+      turnstile.render('#example-container', {
+        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
+        callback: function(token) {
+          console.log(`Challenge Success ${token}`);
+          showDiv();
+        },
+      });
+    };
+  </script>
+</head>
+<body>
+  <div id="example-container"></div>
+  <div class="captcha-box">
+    <h2>Congratulations!</h2>
+    <p>You have resolved the captcha.</p>
+  </div>
 
-    <h1>Resolve Captcha to View Email</h1>
-    <div id="captcha-container"></div>
-    <div id="captcha-status"></div>
-    <div id="email-container" style="display: none;"></div>
     <div class='captcha-box'>Here is the email address you were looking for<br><br><a id="email" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</a> <img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png"></div>
     
     <br><br><br>
-<footer>·
+<footer>
   <a href="pgp_keys.asc" download title="Everyone should have one of these">
     <div class="footer-align footer-one">
       <span>
@@ -61,9 +69,9 @@
       </span>
     </div>
   </a>
-  &nbsp;·<br>
+  &nbsp;<br>
    <div class="footer-align footer-tree">
      <span title="Copyright 2022, All Rights Reserved.">·&nbsp;&copy;&nbsp;Jorge&nbsp;Fernando&nbsp;Álava&nbsp;Vélez,&nbsp;2022</span><!-- Tiny bit of tomfoolery here -->
    </div>
-·</footer><br><br>
+</footer><br><br>
 </html>
