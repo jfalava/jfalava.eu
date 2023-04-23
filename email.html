@@ -16,32 +16,41 @@
   <link rel="stylesheet" media="(max-width: 832px)" href="styles/linktree-mobile.css"/>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
   <style>.captcha-box { display: none;  }</style>
-  <script>function showDiv() {
-    document.querySelector(".captcha-box").style.display = "block";
-  }
-
-  window.onloadTurnstileCallback = function() {
-    turnstile.render('#turnstile-widget', {
-      sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
-      callback: function(token) {
-        console.log(`Challenge Success ${token}`);
-        showDiv();
-      },
-    });
-  };</script>
   <script>
-  const emailCopyBtn = document.querySelector("#email-copy");
-  const emailSpan = document.querySelector("#email");
+    function showDiv() {
+      document.querySelector(".captcha-box").style.display = "block";
+    }
 
-  emailCopyBtn.addEventListener("click", function() {
-    const emailText = emailSpan.textContent;
-    navigator.clipboard.writeText(emailText).then(function() {
-      console.log("Copied email: " + emailText);
-    }, function() {
-      console.error("Failed to copy email");
-    });
-  });
+    window.onloadTurnstileCallback = function() {
+      turnstile.render('#turnstile-widget', {
+        sitekey: '0x4AAAAAAAELud_4ajT9ou1R',
+        callback: function(token) {
+          console.log(`Challenge Success ${token}`);
+          showDiv();
+        },
+      });
+    };
   </script>
+  <script>
+// Get the image and link elements
+const emailCopy = document.getElementById('email-copy');
+const linkElement = document.querySelector('a');
+
+// Add a click event listener to the image
+emailCopy.addEventListener('click', () => {
+  // Get the text content of the link element
+  const linkText = linkElement.textContent;
+
+  // Copy the link text to the clipboard
+  navigator.clipboard.writeText(linkText)
+    .then(() => {
+      console.log('Link copied to clipboard');
+    })
+    .catch((err) => {
+      console.error('Failed to copy link: ', err);
+    });
+});
+</script>
 </head>
   <title>Jorge Fernando Álava</title>
 
@@ -53,7 +62,7 @@
   <div id="turnstile-widget"></div>
   <div class="captcha-box">
     <h2 class="email-title">Here is the email address you were looking for</h2><br>
-    <span id="email" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</span>&nbsp;<img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
+    <a id="email" href='mailto:contacto@jfalava.eu'>contacto@jfalava.eu</a>&nbsp;<img style="vertical-align:-5px;display:inline;" width="20" height="20" id="email-copy" src="resources/copy.png">
   </div>    
     <br><br><br>
 <footer>
