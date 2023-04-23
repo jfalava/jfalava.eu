@@ -16,10 +16,12 @@
   text-align: center;
 }
 
-.turnstile-widget{
-  margin-left: 30%;
-  margin-right: 30%;
+.turnstile-widget {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
 }
+
 
 .email-title{
   font-family: name, sans-serif;
