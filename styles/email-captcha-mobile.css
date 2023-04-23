@@ -21,7 +21,9 @@
     }
     
     .turnstile-widget{
-      margin: auto;
+      text-align: center;
+      -webkit-text-align: center;
+      -moz-text-align: center;
     }
     
     .email-title{

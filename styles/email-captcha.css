@@ -17,11 +17,12 @@ padding: 2em;
 text-align: center;
 -webkit-text-align: center;
 -moz-text-align: center;
-
 }
 
 .turnstile-widget{
-  margin: auto;
+  text-align: center;
+  -webkit-text-align: center;
+  -moz-text-align: center;
 }
 
 .email-title{
