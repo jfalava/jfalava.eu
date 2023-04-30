@@ -29,6 +29,7 @@
 .linkedin-icon { vertical-align:middle;  z-index: 1; }
 
 .links-container {
+    text-align: center;
     flex-direction: column;
     align-items: center;
     text-decoration: none;

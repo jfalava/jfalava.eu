@@ -33,3 +33,7 @@ display: inline;
 border-radius: 50%;
 vertical-align:-30px;
 }
+
+.apellido {
+    font-family: 'surname', sans-serif;
+}
