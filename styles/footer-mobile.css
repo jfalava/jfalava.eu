@@ -1,0 +1,22 @@
+@font-face {    
+    font-family: 'footer';    
+    src: url('../resources/name.otf') format('opentype');     
+}
+
+footer {
+    font-family: footer, sans-serif;
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1.5em;
+    text-align: center;
+}
+
+.footer-align {
+    display: inline;
+   }
