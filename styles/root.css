@@ -14,14 +14,13 @@ body {
 
 a:link {
     text-decoration: none;
-    color: rgb(81, 125, 237);
+    color: rgb(119, 152, 236);
 }
 a:visited {
-    color: rgb(130, 84, 222);
-}
+    color: rgb(252, 83, 83);
 
 a:hover {
-    color: rgb(62, 135, 83);
+    color: rgb(255, 255, 255);
 }
 
 details {
